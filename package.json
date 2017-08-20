@@ -19,7 +19,8 @@
     "inert": "latest",
     "nconf": "latest",
     "socket.io": "latest",
-    "vision": "latest"
+    "vision": "latest",
+    "socketcan": "latest"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

@@ -8,7 +8,8 @@ var registerPlugins = function (server) {
   var plugins = [
     require('inert'),
     require('vision'),
-    require('./socketio')
+    require('./socketio'),
+    require('./hapi-can')
   ];
 
   const goodOptions = {

@@ -4,18 +4,19 @@ exports.register = function (server, options, next) {
 
   var io = require('socket.io')(server.listener);
   console.log('register');
+  server.expose('io', io);
 
   io.on('connection', function (socket) {
 
     console.log('New connection!' + socket.id);
-
+/*
     setInterval(function() {
       var value = Math.round(Math.random() * 4000);
-      socket.emit("action", {
+      io.sockets.emit("action", {
         rpm: value
       });
     }, 2000);
-
+*/
     socket.emit("action", {
       rpm: 0,
       message: "Hello from Hapi!"
@@ -66,5 +67,5 @@ exports.register = function (server, options, next) {
 };
 
 exports.register.attributes = {
-  name: 'hapi-chat'
+  name: 'hapi-socketio'
 };
